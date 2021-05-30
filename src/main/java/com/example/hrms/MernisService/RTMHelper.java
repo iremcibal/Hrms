@@ -1,4 +1,4 @@
-package MernisServices;
+package com.example.hrms.MernisService;
 
 //----------------------------------------------------
 //
@@ -10,14 +10,12 @@ package MernisServices;
 //----------------------------------------------------
 
 import java.util.*;
-
-import org.hibernate.mapping.AttributeContainer;
 import org.ksoap2.serialization.*;
 import org.kxml2.kdom.Element;
 import org.kxml2.kdom.Node;
 
 
-public class UCNHelper
+public class RTMHelper
 {
     public static < T, E> T getKeyByValue(java.util.Map< T, E> map, E value) {
         for (java.util.Map.Entry< T, E> entry : map.entrySet()) {
@@ -28,7 +26,7 @@ public class UCNHelper
         return null;
     }
 
-    public static java.lang.Object getAttribute(AttributeContainer obj, java.lang.String name, java.lang.String namespace)
+    public static java.lang.Object getAttribute(AttributeContainer obj,java.lang.String name,java.lang.String namespace)
     {
         for (int i=0;i < obj.getAttributeCount();i++){
             AttributeInfo info = new AttributeInfo();
@@ -70,7 +68,7 @@ public class UCNHelper
             if (obj instanceof java.util.Date)
             {
                 java.util.Date date = (java.util.Date) obj;
-                value = UCNExtendedSoapSerializationEnvelope.getDateTimeConverter().getStringFromDateTime(date);
+                value = RTMExtendedSoapSerializationEnvelope.getDateTimeConverter().getStringFromDateTime(date);
             }
             parentElement.addChild(org.kxml2.kdom.Node.TEXT,value);
         }

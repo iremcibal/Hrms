@@ -1,4 +1,4 @@
-package MernisServices;
+package com.example.hrms.MernisService;
 
 //----------------------------------------------------
 //
@@ -12,7 +12,7 @@ package MernisServices;
 import java.util.Date;
 
 
-public interface UCNDateTimeConverter
+public interface RTMDateTimeConverter
 {
     java.util.Date convertDateTime(String strDate);
     java.util.Date convertTime(String strDate);
