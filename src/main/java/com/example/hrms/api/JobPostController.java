@@ -22,7 +22,7 @@ public class JobPostController {
 
     //Kayıt
     @PostMapping("/getByJobPostSave")
-    public Result getByJobPostSave(JobPost jobPost){
+    public Result getByJobPostSave(@RequestBody JobPost jobPost){
         return jobPostService.getByJobPostSave(jobPost);
     }
 

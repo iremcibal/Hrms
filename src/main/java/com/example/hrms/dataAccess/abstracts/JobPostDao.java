@@ -7,5 +7,5 @@ import java.util.List;
 
 public interface JobPostDao extends JpaRepository<JobPost,Integer> {
 
-    List<JobPost> getByCompanyNameList(String companyName);
+    List<JobPost> getByCompany_CompanyName(String companyName);
 }

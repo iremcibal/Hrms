@@ -41,6 +41,6 @@ public class JobPostManager implements JobPostService {
     @Override
     public DataResult<List<JobPost>> getByCompanyNameList(String companyName) {
 
-        return new SuccessDataResult<List<JobPost>>(jobPostDao.getByCompanyNameList(companyName),"Data Listelendi.");
+        return new SuccessDataResult<List<JobPost>>(jobPostDao.getByCompany_CompanyName(companyName),"Data Listelendi.");
     }
 }
