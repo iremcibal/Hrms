@@ -6,6 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.List;
 
 //iş verenler
 @Entity
@@ -24,6 +25,7 @@ public class Company extends Users {
     @Column(name = "phone")
     private String telePhone;
 
-
+    @OneToMany(mappedBy = "company")
+    private List<JobPost> jobPost;
 
 }

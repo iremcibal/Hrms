@@ -1,4 +1,4 @@
-package MernisServices;
+package com.example.hrms.MernisService;
 
 //----------------------------------------------------
 //
@@ -15,7 +15,7 @@ import java.util.Locale;
 
 
 
-public class UCNStandardDateTimeConverter implements UCNDateTimeConverter
+public class RTMStandardDateTimeConverter implements RTMDateTimeConverter
 {
     public java.util.TimeZone TimeZone=java.util.TimeZone.getTimeZone("UTC");
 
