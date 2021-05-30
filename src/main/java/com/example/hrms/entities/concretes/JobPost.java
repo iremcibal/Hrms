@@ -1,5 +1,7 @@
 package com.example.hrms.entities.concretes;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -55,11 +57,11 @@ public class JobPost {
     private City city;
 
     @ManyToOne()
-    @JoinColumn(name = "id")
+    @JoinColumn(name = "position_id")
     private Positions positions;
 
     @ManyToOne()
-    @JoinColumn(name = "id")
+    @JoinColumn(name = "company_id")
     private Company company;
 
 

@@ -1,6 +1,8 @@
 package com.example.hrms.entities.concretes;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -16,12 +18,13 @@ import java.util.List;
 public class City {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id",nullable = false)
+    @Column(name = "city_id",nullable = false)
     private int city_id;
 
-    @Column(name = "cityName",nullable = false)
+    @Column(name = "city_name",nullable = false)
     private String cityName;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "city")
     private List<JobPost> jobPosts;
 

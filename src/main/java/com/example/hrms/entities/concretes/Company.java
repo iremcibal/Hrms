@@ -1,6 +1,8 @@
 package com.example.hrms.entities.concretes;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -25,6 +27,7 @@ public class Company extends Users {
     @Column(name = "phone")
     private String telePhone;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "company")
     private List<JobPost> jobPost;
 
