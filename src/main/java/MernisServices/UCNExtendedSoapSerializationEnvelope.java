@@ -8,6 +8,8 @@ package MernisServices;
 //
 //----------------------------------------------------
 
+import com.sun.xml.bind.v2.model.core.PropertyInfo;
+import com.sun.xml.txw2.output.XmlSerializer;
 import org.ksoap2.SoapEnvelope;
 import org.ksoap2.serialization.*;
 import org.kxml2.io.KXmlParser;

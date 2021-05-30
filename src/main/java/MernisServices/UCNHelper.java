@@ -10,6 +10,8 @@ package MernisServices;
 //----------------------------------------------------
 
 import java.util.*;
+
+import org.hibernate.mapping.AttributeContainer;
 import org.ksoap2.serialization.*;
 import org.kxml2.kdom.Element;
 import org.kxml2.kdom.Node;
@@ -26,7 +28,7 @@ public class UCNHelper
         return null;
     }
 
-    public static java.lang.Object getAttribute(AttributeContainer obj,java.lang.String name,java.lang.String namespace)
+    public static java.lang.Object getAttribute(AttributeContainer obj, java.lang.String name, java.lang.String namespace)
     {
         for (int i=0;i < obj.getAttributeCount();i++){
             AttributeInfo info = new AttributeInfo();
