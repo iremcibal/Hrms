@@ -8,10 +8,11 @@ import java.util.List;
 
 public interface JobPostService {
     Result getByJobPostSave(JobPost jobPost);
-    DataResult<List<JobPost>> setByJobPostList(Boolean isActive);
+    DataResult<List<JobPost>> getByJobPostList(Boolean isActive);
     DataResult<List<JobPost>> getByJobPostSort();
     DataResult<List<JobPost>> getByCompanyNameList(String companyName);
 
+    DataResult<JobPost> updateStatusJobPost(int id,Boolean status);
 
 
 }

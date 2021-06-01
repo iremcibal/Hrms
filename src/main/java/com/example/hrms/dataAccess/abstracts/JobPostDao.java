@@ -8,4 +8,6 @@ import java.util.List;
 public interface JobPostDao extends JpaRepository<JobPost,Integer> {
 
     List<JobPost> getByCompany_CompanyName(String companyName);
+    List<JobPost> getByIsActive(Boolean status);
+    JobPost getByJobPostId(int jobPostId);
 }

@@ -27,9 +27,9 @@ public class JobPostController {
     }
 
     //Aktif olan iş ilanlarını sıralama
-    @GetMapping("/setByJobPostList")
-    public DataResult<List<JobPost>> setByJobPostList(Boolean isActive){
-        return jobPostService.setByJobPostList(isActive);
+    @GetMapping("/getByJobPostList")
+    public DataResult<List<JobPost>> getByJobPostList(Boolean isActive){
+        return jobPostService.getByJobPostList(isActive);
     }
 
     //Tarihe göre sıralama
@@ -44,6 +44,11 @@ public class JobPostController {
         return jobPostService.getByCompanyNameList(companyName);
     }
 
+    //Aktifliğini değiştirmek
+    @GetMapping("/updateStatusJobPost")
+    public DataResult<JobPost> updateStatusJobPost(int id, Boolean status){
+        return jobPostService.updateStatusJobPost(id,status);
+    }
 
 
 
