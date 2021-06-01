@@ -12,7 +12,7 @@ package com.example.hrms.MernisService;
 import java.util.Date;
 
 
-public interface RTMDateTimeConverter
+public interface GUFDateTimeConverter
 {
     java.util.Date convertDateTime(String strDate);
     java.util.Date convertTime(String strDate);

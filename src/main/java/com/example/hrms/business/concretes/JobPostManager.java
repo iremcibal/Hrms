@@ -1,10 +1,7 @@
 package com.example.hrms.business.concretes;
 
 import com.example.hrms.business.abstracts.JobPostService;
-import com.example.hrms.core.results.DataResult;
-import com.example.hrms.core.results.Result;
-import com.example.hrms.core.results.SuccessDataResult;
-import com.example.hrms.core.results.SuccessResult;
+import com.example.hrms.core.results.*;
 import com.example.hrms.dataAccess.abstracts.JobPostDao;
 import com.example.hrms.entities.concretes.JobPost;
 import org.springframework.data.domain.Sort;
@@ -28,8 +25,8 @@ public class JobPostManager implements JobPostService {
     }
 
     @Override
-    public DataResult<List<JobPost>> setByJobPostList(Boolean isActive) {
-        return new SuccessDataResult<List<JobPost>>(jobPostDao.findAll(),"Aktif iş ilanları");
+    public DataResult<List<JobPost>> getByJobPostList(Boolean isActive) {
+        return new DataResult<List<JobPost>>(jobPostDao.getByIsActive(isActive),true,"Aktif iş ilanları");
     }
 
     @Override
@@ -41,6 +38,17 @@ public class JobPostManager implements JobPostService {
     @Override
     public DataResult<List<JobPost>> getByCompanyNameList(String companyName) {
 
-        return new SuccessDataResult<List<JobPost>>(jobPostDao.getByCompany_CompanyName(companyName),"Data Listelendi.");
+        return new SuccessDataResult<List<JobPost>>(jobPostDao.getByCompany_CompanyName(companyName), "Data Listelendi.");
     }
+
+    @Override 
+    public DataResult<JobPost> updateStatusJobPost(int id, Boolean status) {
+        JobPost jobPost = this.jobPostDao.getByJobPostId(id);
+        jobPost.setActive(status);
+        jobPostDao.save(jobPost);
+        return new SuccessDataResult<JobPost>(jobPost,"İlanınızın aktiflik durumu değişmiştir.");
+
+    }
+
+
 }

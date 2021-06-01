@@ -21,7 +21,7 @@ import java.io.IOException;
 import java.util.UUID;
 
 
-public class RTMMarshalGuid implements Marshal
+public class GUFMarshalGuid implements Marshal
 {
     public java.lang.Object readInstance(XmlPullParser parser, java.lang.String namespace, java.lang.String name,PropertyInfo expected) throws IOException, XmlPullParserException
     {

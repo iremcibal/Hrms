@@ -15,7 +15,7 @@ import java.util.Locale;
 
 
 
-public class RTMStandardDateTimeConverter implements RTMDateTimeConverter
+public class GUFStandardDateTimeConverter implements GUFDateTimeConverter
 {
     public java.util.TimeZone TimeZone=java.util.TimeZone.getTimeZone("UTC");
 

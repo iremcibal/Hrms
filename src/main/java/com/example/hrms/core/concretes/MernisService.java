@@ -1,6 +1,6 @@
 package com.example.hrms.core.concretes;
 
-import com.example.hrms.MernisService.RTMKPSPublicSoap;
+import com.example.hrms.MernisService.GUFKPSPublicSoap;
 import com.example.hrms.core.abstracts.UserCheckService;
 import com.example.hrms.entities.concretes.Candidates;
 import org.springframework.stereotype.Service;
@@ -13,7 +13,7 @@ public class MernisService implements UserCheckService {
     @Override
     public boolean CheckIfRealPerson(Candidates candidates) {
 
-        RTMKPSPublicSoap candidate = new RTMKPSPublicSoap();
+        GUFKPSPublicSoap candidate = new GUFKPSPublicSoap();
         try {
             return candidate.TCKimlikNoDogrula(Long.parseLong(candidates.getNationaltyNo()), candidates.getName(),
                     candidates.getLastName(), candidates.getBirthDate().getYear());

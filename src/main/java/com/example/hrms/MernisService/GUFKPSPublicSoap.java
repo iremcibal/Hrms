@@ -22,13 +22,13 @@ import java.util.Arrays;
 import java.util.List;
 
 
-public class RTMKPSPublicSoap
+public class GUFKPSPublicSoap
 {
-    interface RTMIWcfMethod
+    interface GUFIWcfMethod
     {
-        RTMExtendedSoapSerializationEnvelope CreateSoapEnvelope() throws java.lang.Exception;
+        GUFExtendedSoapSerializationEnvelope CreateSoapEnvelope() throws java.lang.Exception;
 
-        java.lang.Object ProcessResult(RTMExtendedSoapSerializationEnvelope __envelope,java.lang.Object result) throws java.lang.Exception;
+        java.lang.Object ProcessResult(GUFExtendedSoapSerializationEnvelope __envelope,java.lang.Object result) throws java.lang.Exception;
     }
 
     String url="https://tckimlik.nvi.gov.tr/Service/KPSPublic.asmx";
@@ -39,14 +39,14 @@ public class RTMKPSPublicSoap
     public boolean enableLogging;
 
 
-    public RTMKPSPublicSoap(){}
+    public GUFKPSPublicSoap(){}
 
-    public RTMKPSPublicSoap(String url)
+    public GUFKPSPublicSoap(String url)
     {
         this.url = url;
     }
 
-    public RTMKPSPublicSoap(String url,int timeOut)
+    public GUFKPSPublicSoap(String url,int timeOut)
     {
         this.url = url;
         this.timeOut=timeOut;
@@ -79,15 +79,15 @@ public class RTMKPSPublicSoap
         return null;
     }
 
-    protected RTMExtendedSoapSerializationEnvelope createEnvelope()
+    protected GUFExtendedSoapSerializationEnvelope createEnvelope()
     {
-        RTMExtendedSoapSerializationEnvelope envelope= new RTMExtendedSoapSerializationEnvelope(RTMExtendedSoapSerializationEnvelope.VER11);
+        GUFExtendedSoapSerializationEnvelope envelope= new GUFExtendedSoapSerializationEnvelope(GUFExtendedSoapSerializationEnvelope.VER11);
         envelope.enableLogging = enableLogging;
     
         return envelope;
     }
 
-    protected java.util.List sendRequest(String methodName,RTMExtendedSoapSerializationEnvelope envelope,org.ksoap2.transport.Transport transport ,com.easywsdl.exksoap2.ws_specifications.profile.WS_Profile profile )throws java.lang.Exception
+    protected java.util.List sendRequest(String methodName,GUFExtendedSoapSerializationEnvelope envelope,org.ksoap2.transport.Transport transport ,com.easywsdl.exksoap2.ws_specifications.profile.WS_Profile profile )throws java.lang.Exception
     {
         if(transport instanceof com.easywsdl.exksoap2.transport.AdvancedHttpTransportSE )
         {
@@ -99,7 +99,7 @@ public class RTMKPSPublicSoap
         }
     }
 
-    java.lang.Object getResult(java.lang.Class destObj,java.lang.Object source,String resultName,RTMExtendedSoapSerializationEnvelope __envelope) throws java.lang.Exception
+    java.lang.Object getResult(java.lang.Class destObj,java.lang.Object source,String resultName,GUFExtendedSoapSerializationEnvelope __envelope) throws java.lang.Exception
     {
         if(source==null)
         {
@@ -143,11 +143,11 @@ public class RTMKPSPublicSoap
     public Boolean TCKimlikNoDogrula(final Long TCKimlikNo,final String Ad,final String Soyad,final Integer DogumYili) throws java.lang.Exception
     {
         com.easywsdl.exksoap2.ws_specifications.profile.WS_Profile __profile = new com.easywsdl.exksoap2.ws_specifications.profile.WS_Profile();
-        return (Boolean)execute(new RTMIWcfMethod()
+        return (Boolean)execute(new GUFIWcfMethod()
         {
             @Override
-            public RTMExtendedSoapSerializationEnvelope CreateSoapEnvelope(){
-                RTMExtendedSoapSerializationEnvelope __envelope = createEnvelope();
+            public GUFExtendedSoapSerializationEnvelope CreateSoapEnvelope(){
+                GUFExtendedSoapSerializationEnvelope __envelope = createEnvelope();
                 SoapObject __soapReq = new SoapObject("http://tckimlik.nvi.gov.tr/WS", "TCKimlikNoDogrula");
                 __envelope.setOutputSoapObject(__soapReq);
                 
@@ -180,7 +180,7 @@ public class RTMKPSPublicSoap
             }
             
             @Override
-            public java.lang.Object ProcessResult(RTMExtendedSoapSerializationEnvelope __envelope,java.lang.Object __result)throws java.lang.Exception {
+            public java.lang.Object ProcessResult(GUFExtendedSoapSerializationEnvelope __envelope,java.lang.Object __result)throws java.lang.Exception {
                 SoapObject __soap=(SoapObject)__result;
                 java.lang.Object obj = __soap.getProperty("TCKimlikNoDogrulaResult");
                 if (obj instanceof SoapPrimitive)
@@ -196,11 +196,11 @@ public class RTMKPSPublicSoap
         },"http://tckimlik.nvi.gov.tr/WS/TCKimlikNoDogrula",__profile);
     }
 
-    protected java.lang.Object execute(RTMIWcfMethod wcfMethod,String methodName,com.easywsdl.exksoap2.ws_specifications.profile.WS_Profile profile) throws java.lang.Exception
+    protected java.lang.Object execute(GUFIWcfMethod wcfMethod,String methodName,com.easywsdl.exksoap2.ws_specifications.profile.WS_Profile profile) throws java.lang.Exception
     {
         org.ksoap2.transport.Transport __httpTransport=createTransport();
         __httpTransport.debug=enableLogging;
-        RTMExtendedSoapSerializationEnvelope __envelope=wcfMethod.CreateSoapEnvelope();
+        GUFExtendedSoapSerializationEnvelope __envelope=wcfMethod.CreateSoapEnvelope();
         try
         {
             sendRequest(methodName, __envelope, __httpTransport,profile);
@@ -226,7 +226,7 @@ public class RTMKPSPublicSoap
     }
 
 
-    protected java.lang.Exception convertToException(org.ksoap2.SoapFault fault,RTMExtendedSoapSerializationEnvelope envelope)
+    protected java.lang.Exception convertToException(org.ksoap2.SoapFault fault,GUFExtendedSoapSerializationEnvelope envelope)
     {
         org.ksoap2.SoapFault newException = fault;
         return newException;
