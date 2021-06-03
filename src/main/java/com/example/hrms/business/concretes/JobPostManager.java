@@ -41,7 +41,7 @@ public class JobPostManager implements JobPostService {
         return new SuccessDataResult<List<JobPost>>(jobPostDao.getByCompany_CompanyName(companyName), "Data Listelendi.");
     }
 
-    @Override 
+    @Override
     public DataResult<JobPost> updateStatusJobPost(int id, Boolean status) {
         JobPost jobPost = this.jobPostDao.getByJobPostId(id);
         jobPost.setActive(status);

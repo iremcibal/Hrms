@@ -1,6 +1,7 @@
 package com.example.hrms.entities.concretes;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -33,6 +34,12 @@ public class Candidates extends Users{
     @Column(name = "is_active")
     private boolean isActive;
 
+    @OneToOne(mappedBy = "candidates")
+    private CurriculumVitae curriculumVitae;
+
+    @JsonIgnore
+    @OneToOne(mappedBy = "candidates")
+    private Image image;
 
 
 }
