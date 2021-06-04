@@ -17,11 +17,12 @@ public class Technology {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "technology_id")
-    private int technology_id;
+    private int technologyId;
 
     @Column(name = "technology_name")
-    private String technology_name;
+    private String technologyName;
 
+    @JsonIgnore
     @OneToOne
     @JoinColumn(name = "level_id")
     private Level level;
