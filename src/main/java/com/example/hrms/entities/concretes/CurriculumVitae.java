@@ -1,5 +1,6 @@
 package com.example.hrms.entities.concretes;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -18,19 +19,24 @@ public class CurriculumVitae {
     @Column(name = "cv_id")
     private int cv_id;
 
+    @JsonIgnore
     @OneToOne()
     @JoinColumn(name = "candidates_id")
     private Candidates candidates;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "curriculumVitae")
     private List<University> university;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "curriculumVitae")
     private List<JobExperiences> jobExperiences;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "curriculumVitae")
     private List<ForeignLanguage> foreignLanguage;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "curriculumVitae")
     private List<Technology> technology;
 

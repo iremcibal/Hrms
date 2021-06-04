@@ -34,6 +34,7 @@ public class Candidates extends Users{
     @Column(name = "is_active")
     private boolean isActive;
 
+    @JsonIgnore
     @OneToOne(mappedBy = "candidates")
     private CurriculumVitae curriculumVitae;
 

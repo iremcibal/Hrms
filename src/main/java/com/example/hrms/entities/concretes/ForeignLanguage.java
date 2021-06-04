@@ -1,6 +1,7 @@
 package com.example.hrms.entities.concretes;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -25,6 +26,7 @@ public class ForeignLanguage {
     @JoinColumn(name = "level_id")
     private Level level;
 
+    @JsonIgnore
     @ManyToOne()
     @JoinColumn(name = "cv_id")
     private CurriculumVitae curriculumVitae;

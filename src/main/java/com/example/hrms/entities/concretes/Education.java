@@ -18,10 +18,10 @@ public class Education {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "education_id")
-    private int education_id;
+    private int educationId;
 
     @Column(name = "education_name")
-    private String education_name;
+    private String educationName;
 
     @JsonIgnore
     @OneToOne(mappedBy = "education")
