@@ -10,6 +10,7 @@ import java.util.List;
 public interface TechnologyDao extends JpaRepository<Technology,Integer> {
     Technology getByTechnologyId(int technologyId);
 
+
     List<Technology> getByCandidatesId(int id);
 
 }

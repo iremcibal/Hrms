@@ -10,6 +10,7 @@ import com.example.hrms.entities.concretes.Technology;
 import java.util.List;
 
 public interface LevelService {
+
     DataResult<List<Level>> getByLevelList();
     Result getByLevelSave(Level level);
     Result getByLevelDelete(int levelId);

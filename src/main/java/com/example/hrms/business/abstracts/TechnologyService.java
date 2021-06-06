@@ -15,5 +15,5 @@ public interface TechnologyService {
 
     DataResult<List<Technology>> getByCandidatesId(int id);
 
-    
+
 }
