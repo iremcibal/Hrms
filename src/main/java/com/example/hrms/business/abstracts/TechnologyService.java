@@ -13,5 +13,7 @@ public interface TechnologyService {
     Result getByTechnologySave(Technology technology);
     Result getByTechnologyDelete(int technologyId);
 
-    
+    DataResult<List<Technology>> getByCandidatesId(int id);
+
+
 }

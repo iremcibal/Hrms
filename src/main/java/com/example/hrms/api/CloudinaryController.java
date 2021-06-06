@@ -34,14 +34,12 @@ public class CloudinaryController {
     }
 
     @PostMapping("/upload")
-    public Result upload(@RequestParam MultipartFile multipartFile,@RequestParam int user_id) throws Exception {
+    public Result upload(@RequestParam MultipartFile multipartFile) throws Exception {
         Map result = cloudinaryService.upload(multipartFile);
         Image image = new Image((String) result.get("original_filename"),
-                (String) result.get("url"),(String) result.get("public_id"),
-                (Candidates) result.get(user_id));
+                (String) result.get("url"),(String) result.get("public_id"));
         return imageService.add(image);
     }
-    //String name, String image_url, String public_id,Candidates candidates
 
     @DeleteMapping("/delete{imageId}")
     public Result delete(@PathVariable("imageId") int imageId) throws IOException{

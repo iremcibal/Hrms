@@ -1,6 +1,7 @@
 package com.example.hrms.entities.concretes;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -27,15 +28,16 @@ public class Image {
     @Column(name = "public_id")
     private String publicId;
 
+    @JsonIgnore
     @OneToOne()
-    @JoinColumn(name = "user_id")
+    @JoinColumn(name = "candidates_id")
     private Candidates candidates;
 
-    public Image(String name, String image_url, String public_id,Candidates candidates) {
+
+    public Image(String name, String image_url, String public_id) {
         this.name = name;
         this.imageUrl = image_url;
         this.publicId= public_id;
-        this.candidates =candidates;
     }
 
 

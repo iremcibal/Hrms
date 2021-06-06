@@ -1,31 +1,32 @@
 package com.example.hrms.entities.concretes;
 
-
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(name = "technology")
-public class Technology {
+@Table(name = "cv_details")
+public class CvDetails {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "technology_id")
-    private int technologyId;
+    @Column(name = "cv_details_id")
+    private int cvDetailsId;
 
-    @Column(name = "technology_name")
-    private String technologyName;
+    @Column(name = "github")
+    private String gitHub;
 
-    @JsonIgnore
-    @OneToOne
-    @JoinColumn(name = "level_id")
-    private Level level;
+    @Column(name = "linkedın")
+    private String linkedIn;
+
+    @Column(name = "front_note")
+    private String frontNote;
 
     @JsonIgnore
     @ManyToOne()

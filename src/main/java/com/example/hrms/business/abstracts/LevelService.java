@@ -3,6 +3,7 @@ package com.example.hrms.business.abstracts;
 
 import com.example.hrms.core.results.DataResult;
 import com.example.hrms.core.results.Result;
+import com.example.hrms.entities.concretes.ForeignLanguage;
 import com.example.hrms.entities.concretes.Level;
 import com.example.hrms.entities.concretes.Technology;
 
