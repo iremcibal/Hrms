@@ -18,7 +18,7 @@ public class JobExperiences {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "experiences_id")
-    private int experiences_id;
+    private int experiencesId;
 
     @Column(name = "company_name")
     private String companyName;
@@ -27,15 +27,15 @@ public class JobExperiences {
     private String positionName;
 
     @Column(name="start_at",nullable = false)
-    private Date start_at;
+    private Date startAt;
 
     @Column(name = "finish_at",nullable = true)
-    private Date finish_at;
+    private Date finishAt;
 
     @JsonIgnore
     @ManyToOne()
-    @JoinColumn(name = "cv_id")
-    private CurriculumVitae curriculumVitae;
+    @JoinColumn(name = "candidates_id")
+    private Candidates candidates;
 
 
 

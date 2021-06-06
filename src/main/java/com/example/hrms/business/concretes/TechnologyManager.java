@@ -39,4 +39,9 @@ public class TechnologyManager implements TechnologyService {
         technologyDao.delete(technology);
         return new SuccessResult("Teknoloji silindi");
     }
+
+    @Override
+    public DataResult<List<Technology>> getByCandidatesId(int id) {
+        return new SuccessDataResult<List<Technology>>(technologyDao.getByCandidatesId(id));
+    }
 }

@@ -9,7 +9,6 @@ import java.util.List;
 @Repository
 public interface ImageDao extends JpaRepository<Image,Integer> {
     List<Image> findImageBy();
-
     Image getByImageId(int id);
 
 

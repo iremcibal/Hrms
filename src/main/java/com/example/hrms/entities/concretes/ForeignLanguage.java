@@ -17,18 +17,19 @@ public class ForeignLanguage {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "language_id")
-    private int language_id;
+    private int languageId;
 
     @Column(name = "language")
     private String language;
 
+    @JsonIgnore
     @OneToOne
     @JoinColumn(name = "level_id")
     private Level level;
 
     @JsonIgnore
     @ManyToOne()
-    @JoinColumn(name = "cv_id")
-    private CurriculumVitae curriculumVitae;
+    @JoinColumn(name = "candidates_id")
+    private Candidates candidates;
 
 }

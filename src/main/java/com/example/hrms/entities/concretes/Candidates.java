@@ -7,7 +7,6 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-import java.sql.Date;
 import java.time.LocalDate;
 import java.util.List;
 
@@ -36,11 +35,30 @@ public class Candidates extends Users{
 
     @JsonIgnore
     @OneToOne(mappedBy = "candidates")
-    private CurriculumVitae curriculumVitae;
+    private Image image;
 
     @JsonIgnore
-    @OneToOne(mappedBy = "candidates")
-    private Image image;
+    @OneToMany(mappedBy = "candidates")
+    private List<University> university;
+
+    @JsonIgnore
+    @OneToMany(mappedBy = "candidates")
+    @PrimaryKeyJoinColumn
+    private List<JobExperiences> jobExperiences;
+
+    @JsonIgnore
+    @OneToMany(mappedBy = "candidates")
+    private List<ForeignLanguage> foreignLanguage;
+
+    @JsonIgnore
+    @OneToMany(mappedBy = "candidates")
+    private List<Technology> technology;
+
+    @JsonIgnore
+    @OneToMany(mappedBy = "candidates")
+    private List<CvDetails> cvDetails;
+
+
 
 
 }

@@ -7,6 +7,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.time.LocalDate;
 import java.util.Date;
 
 @Entity
@@ -16,9 +17,9 @@ import java.util.Date;
 @Table(name = "university")
 public class University {
     @Id
-    @Column(name = "university")
+    @Column(name = "university_id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int university_id;
+    private int universityId;
 
     @Column(name = "university_name",nullable = false)
     private String university_name;
@@ -28,19 +29,19 @@ public class University {
 
     @JsonIgnore
     @OneToOne()
-    @JoinColumn(name = "education_id")
+    @JoinColumn(name = "educationId")
     private Education education;
 
     @Column(name="start_at",nullable = false)
-    private Date start_at;
+    private LocalDate startAt;
 
     @Column(name = "finish_at",nullable = true)
-    private Date finish_at;
+    private LocalDate finishAt;
 
     @JsonIgnore
     @ManyToOne()
-    @JoinColumn(name = "cv_id")
-    private CurriculumVitae curriculumVitae;
+    @JoinColumn(name = "candidates_id")
+    private Candidates candidates;
 
 
 
