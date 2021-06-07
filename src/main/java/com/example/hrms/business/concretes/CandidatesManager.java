@@ -15,6 +15,7 @@ import java.util.List;
 @Service
 public class CandidatesManager implements CandidateService {
     private CandidateDao candidateDao;
+    private ImageService imageService;
     private UniversityService universityService;
     private JobExperienceService jobExperienceService;
     private TechnologyService technologyService;
@@ -24,8 +25,9 @@ public class CandidatesManager implements CandidateService {
     private EmailService emailService;
 
     @Autowired
-    public CandidatesManager(CandidateDao candidateDao, UniversityService universityService, JobExperienceService jobExperienceService, TechnologyService technologyService, LanguageService languageService, CvDetailService cvDetailService, UserCheckService userCheckService, EmailService emailService) {
+    public CandidatesManager(CandidateDao candidateDao, ImageService imageService, UniversityService universityService, JobExperienceService jobExperienceService, TechnologyService technologyService, LanguageService languageService, CvDetailService cvDetailService, UserCheckService userCheckService, EmailService emailService) {
         this.candidateDao = candidateDao;
+        this.imageService = imageService;
         this.universityService = universityService;
         this.jobExperienceService = jobExperienceService;
         this.technologyService = technologyService;
@@ -58,7 +60,7 @@ public class CandidatesManager implements CandidateService {
         System.out.println("----------------------------");
         this.emailService.activeLinkForMail(candidates.getEmail());
         candidateDao.save(candidates);
-        return new Result(true,"Yeni üye kaydedildi.");
+        return new SuccessResult("Yeni üye kaydedildi.");
 
     }
 
@@ -67,6 +69,7 @@ public class CandidatesManager implements CandidateService {
         CurriculumVitaeDto curriculumVitaeDto = new CurriculumVitaeDto();
 
         curriculumVitaeDto.setCandidates(this.candidateDao.findById(id));
+        curriculumVitaeDto.setImage(this.imageService.getByCandidatesId(id).getData());
         curriculumVitaeDto.setUniversities(this.universityService.getByCandidatesId(id).getData());
         curriculumVitaeDto.setJobExperiences(this.jobExperienceService.getByCandidatesId(id).getData());
         curriculumVitaeDto.setTechnologies(this.technologyService.getByCandidatesId(id).getData());
@@ -75,8 +78,8 @@ public class CandidatesManager implements CandidateService {
 
         return new SuccessDataResult<CurriculumVitaeDto>(curriculumVitaeDto,"Data listelendi.");
 
-
     }
+
 
     @Override
     public Result getByCandidateDelete(String nationaltyNo) {

@@ -16,7 +16,7 @@ import java.util.List;
 public class CurriculumVitaeDto {
 
     private Candidates candidates;
-    private Image image;
+    private List<Image> image;
     private List<University> universities;
     private List<Technology> technologies;
     private List<JobExperiences> jobExperiences;

@@ -3,6 +3,7 @@ package com.example.hrms.business.abstracts;
 import com.example.hrms.core.results.DataResult;
 import com.example.hrms.core.results.Result;
 import com.example.hrms.entities.concretes.Image;
+import com.example.hrms.entities.concretes.University;
 
 import java.util.List;
 import java.util.Optional;
@@ -12,6 +13,8 @@ public interface ImageService {
     Result add(Image image);
     Result delete(int id);
     DataResult<Image> getByImageId(int imageId);
+
+    DataResult<List<Image>> getByCandidatesId(int id);
 
 
 }
