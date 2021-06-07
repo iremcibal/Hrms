@@ -8,6 +8,7 @@ import com.example.hrms.core.results.SuccessDataResult;
 import com.example.hrms.core.results.SuccessResult;
 import com.example.hrms.dataAccess.abstracts.ImageDao;
 import com.example.hrms.entities.concretes.Image;
+import com.example.hrms.entities.concretes.University;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -47,6 +48,11 @@ public class ImageManager implements ImageService {
     @Override
     public DataResult<Image> getByImageId(int imageId) {
         return new SuccessDataResult<Image>(imageDao.getByImageId(imageId));
+    }
+
+    @Override
+    public DataResult<List<Image>> getByCandidatesId(int id) {
+        return new SuccessDataResult<List<Image>>(this.imageDao.getByCandidatesId(id),"Data listelendi");
     }
 
 

@@ -60,6 +60,7 @@ public class JobPost {
     @JoinColumn(name = "position_id")
     private Positions positions;
 
+    @JsonIgnore
     @ManyToOne()
     @JoinColumn(name = "company_id")
     private Company company;
