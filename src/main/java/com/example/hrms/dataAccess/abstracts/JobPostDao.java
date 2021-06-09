@@ -6,6 +6,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import java.util.List;
 
 public interface JobPostDao extends JpaRepository<JobPost,Integer> {
+    List<JobPost> getByIsActiveTrue();
 
     List<JobPost> getByCompany_CompanyName(String companyName);
     List<JobPost> getByIsActive(Boolean status);

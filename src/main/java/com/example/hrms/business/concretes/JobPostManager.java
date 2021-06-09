@@ -25,6 +25,11 @@ public class JobPostManager implements JobPostService {
     }
 
     @Override
+    public DataResult<List<JobPost>> getJobPostByActiveTrue() {
+        return new SuccessDataResult<List<JobPost>>(jobPostDao.getByIsActiveTrue(),"İş ilanları");
+    }
+
+    @Override
     public DataResult<List<JobPost>> getByJobPostList(Boolean isActive) {
         return new DataResult<List<JobPost>>(jobPostDao.getByIsActive(isActive),true,"Aktif iş ilanları");
     }
