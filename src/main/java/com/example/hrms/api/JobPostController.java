@@ -26,6 +26,13 @@ public class JobPostController {
         return jobPostService.getByJobPostSave(jobPost);
     }
 
+    //İş ilanı
+    @GetMapping("/getall")
+    public DataResult<List<JobPost>> getJobPostByActiveTrue(){
+        return jobPostService.getJobPostByActiveTrue();
+    }
+
+
     //Aktif olan iş ilanlarını sıralama
     @GetMapping("/getByJobPostList")
     public DataResult<List<JobPost>> getByJobPostList(Boolean isActive){

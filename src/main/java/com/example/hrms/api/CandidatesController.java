@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@CrossOrigin
 @RestController
 @Controller
 @RequestMapping("/candidates")
@@ -28,7 +29,7 @@ public class CandidatesController {
         return candidateService.getByCandidateList();
     }
 
-    @PutMapping("/cvList")
+    @GetMapping("/cvList")
     public DataResult<CurriculumVitaeDto> getCurriculumVitaeById(@RequestBody int id) {
         return candidateService.getCurriculumVitaeById(id);
     }

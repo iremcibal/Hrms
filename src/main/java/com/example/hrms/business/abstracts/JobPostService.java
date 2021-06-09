@@ -8,6 +8,7 @@ import java.util.List;
 
 public interface JobPostService {
     Result getByJobPostSave(JobPost jobPost);
+    DataResult<List<JobPost>> getJobPostByActiveTrue();
     DataResult<List<JobPost>> getByJobPostList(Boolean isActive);
     DataResult<List<JobPost>> getByJobPostSort();
     DataResult<List<JobPost>> getByCompanyNameList(String companyName);
