@@ -1,7 +1,6 @@
 package com.example.hrms.entities.concretes;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -9,7 +8,6 @@ import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
 import javax.persistence.*;
-import java.time.LocalDate;
 import java.util.Date;
 
 
@@ -60,10 +58,10 @@ public class JobPost {
     @JoinColumn(name = "position_id")
     private Positions positions;
 
-    @JsonIgnore
+
     @ManyToOne()
     @JoinColumn(name = "company_id")
-    private Company company;
+    private Company company ;
 
 
 

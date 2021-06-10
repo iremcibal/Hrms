@@ -39,7 +39,7 @@ public class CompanyManager implements CompanyService {
         else if(companyDao.getByEmail(company.getEmail())!=null){
             return new ErrorResult("Bu email ile kayıt mevcut.");
         }
-        else if(!company.getWebSite().contains(email[0])){
+        else if(!company.getWebSite().contains(email[1])){
             return new ErrorResult("Şirket adresiniz ile kayıt olunuz.");
         }
 
