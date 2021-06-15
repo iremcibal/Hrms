@@ -63,8 +63,13 @@ public class JobPost {
     @JoinColumn(name = "company_id")
     private Company company ;
 
+    @ManyToOne()
+    @JoinColumn(name="jobtype_id")
+    private JobType jobType;
 
-
+    @ManyToOne()
+    @JoinColumn(name="jobtime_id")
+    private JobTime jobTime;
 
 
 
