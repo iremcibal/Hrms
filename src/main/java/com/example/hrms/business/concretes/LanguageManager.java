@@ -7,7 +7,6 @@ import com.example.hrms.core.results.SuccessDataResult;
 import com.example.hrms.core.results.SuccessResult;
 import com.example.hrms.dataAccess.abstracts.LanguageDao;
 import com.example.hrms.entities.concretes.ForeignLanguage;
-import com.example.hrms.entities.concretes.Level;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
