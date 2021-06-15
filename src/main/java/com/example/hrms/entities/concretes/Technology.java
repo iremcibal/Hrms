@@ -22,10 +22,7 @@ public class Technology {
     @Column(name = "technology_name")
     private String technologyName;
 
-    @JsonIgnore
-    @OneToOne
-    @JoinColumn(name = "level_id")
-    private Level level;
+    private String level;
 
     @JsonIgnore
     @ManyToOne()

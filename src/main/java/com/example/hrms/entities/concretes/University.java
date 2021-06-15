@@ -8,7 +8,6 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.time.LocalDate;
-import java.util.Date;
 
 @Entity
 @Data
@@ -27,10 +26,7 @@ public class University {
     @Column(name ="division_name",nullable = false)
     private String division_name;
 
-    @JsonIgnore
-    @OneToOne()
-    @JoinColumn(name = "educationId")
-    private Education education;
+    private String education;
 
     @Column(name="start_at",nullable = false)
     private LocalDate startAt;

@@ -3,7 +3,6 @@ package com.example.hrms.api;
 import com.example.hrms.business.abstracts.CandidateService;
 import com.example.hrms.core.results.DataResult;
 import com.example.hrms.core.results.Result;
-import com.example.hrms.core.results.SuccessDataResult;
 import com.example.hrms.entities.concretes.Candidates;
 import com.example.hrms.entities.concretes.dtos.CurriculumVitaeDto;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,7 +29,7 @@ public class CandidatesController {
     }
 
     @GetMapping("/cvList")
-    public DataResult<CurriculumVitaeDto> getCurriculumVitaeById(@RequestBody int id) {
+    public DataResult<CurriculumVitaeDto> getCurriculumVitaeById(@RequestParam int id) {
         return candidateService.getCurriculumVitaeById(id);
     }
 

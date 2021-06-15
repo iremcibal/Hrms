@@ -22,10 +22,7 @@ public class ForeignLanguage {
     @Column(name = "language")
     private String language;
 
-    @JsonIgnore
-    @OneToOne
-    @JoinColumn(name = "level_id")
-    private Level level;
+    private String level;
 
     @JsonIgnore
     @ManyToOne()
