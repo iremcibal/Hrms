@@ -6,7 +6,6 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Entity;
 import java.util.List;
 
 
@@ -22,10 +21,5 @@ public class CurriculumVitaeDto {
     private List<JobExperiences> jobExperiences;
     private List<ForeignLanguage> foreignLanguages;
     private List<CvDetails> cvDetails;
-
-
-
-
-
 
 }

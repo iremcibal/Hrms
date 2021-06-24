@@ -34,8 +34,8 @@ public class CandidatesController {
     }
 
     @PostMapping("/addCandidate")
-    public Result getByCandidateSave(@RequestBody Candidates candidates){
-        return candidateService.getByCandidateSave(candidates);
+    public Result addByCandidateSave(@RequestBody Candidates candidates){
+        return candidateService.addByCandidateSave(candidates);
     }
 
 

@@ -12,6 +12,8 @@ public interface JobPostService {
     DataResult<List<JobPost>> getByJobPostList(Boolean isActive);
     DataResult<List<JobPost>> getByJobPostSort();
     DataResult<List<JobPost>> getByCompanyNameList(String companyName);
+    DataResult<List<JobPost>> getByCompany_Id(int companyId);
+
 
     DataResult<JobPost> updateStatusJobPost(int id,Boolean status);
 
