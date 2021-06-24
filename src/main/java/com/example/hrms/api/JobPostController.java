@@ -50,6 +50,10 @@ public class JobPostController {
     public DataResult<List<JobPost>> getByCompanyNameList(String companyName){
         return jobPostService.getByCompanyNameList(companyName);
     }
+    @GetMapping("/getByCompanyIdList")
+    public DataResult<List<JobPost>> getByCompany_Id(int companyId){
+        return jobPostService.getByCompany_Id(companyId);
+    }
 
     //Aktifliğini değiştirmek
     @GetMapping("/updateStatusJobPost")
