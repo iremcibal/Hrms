@@ -1,11 +1,9 @@
 package com.example.hrms.entities.concretes;
 
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.Singular;
 
 import javax.persistence.*;
 
@@ -27,9 +25,6 @@ public class Users {
     @Column(name = "password")
     private String password;
 
-    @Transient
-    @Column(nullable = false)
-    private String repeat_Password;
 
 
 

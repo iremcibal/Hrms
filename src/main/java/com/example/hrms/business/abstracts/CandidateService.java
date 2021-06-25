@@ -9,7 +9,7 @@ import java.util.List;
 
 public interface CandidateService {
     DataResult<List<Candidates>> getByCandidateList();
-    Result getByCandidateSave(Candidates candidates);
+    Result addByCandidateSave(Candidates candidates);
     DataResult<CurriculumVitaeDto> getCurriculumVitaeById(int id);
 
     Result getByCandidateDelete(String nationaltyNo);
