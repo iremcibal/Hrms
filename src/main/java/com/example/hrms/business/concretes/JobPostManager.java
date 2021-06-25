@@ -47,6 +47,11 @@ public class JobPostManager implements JobPostService {
     }
 
     @Override
+    public DataResult<List<JobPost>> getByCompany_Id(int companyId) {
+        return new SuccessDataResult<List<JobPost>>(jobPostDao.getByCompany_Id(companyId),"Data listelendi.");
+    }
+
+    @Override
     public DataResult<JobPost> updateStatusJobPost(int id, Boolean status) {
         JobPost jobPost = this.jobPostDao.getByJobPostId(id);
         jobPost.setActive(status);
@@ -54,6 +59,7 @@ public class JobPostManager implements JobPostService {
         return new SuccessDataResult<JobPost>(jobPost,"İlanınızın aktiflik durumu değişmiştir.");
 
     }
+
 
 
 }

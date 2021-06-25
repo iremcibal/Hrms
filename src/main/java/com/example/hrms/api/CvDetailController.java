@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@CrossOrigin(origins = "http://localhost:3000")
 @RestController
 @RequestMapping("/cv")
 public class CvDetailController {
@@ -30,6 +31,11 @@ public class CvDetailController {
     @PostMapping("/add")
     public Result getByCvDetailSave(@RequestBody CvDetails cvDetails){
         return cvDetailService.getByCvDetailSave(cvDetails);
+    }
+
+    @GetMapping("/candidatesIdList")
+    DataResult<List<CvDetails>> getByCandidatesId(int candidatesId){
+        return cvDetailService.getByCandidatesId(candidatesId);
     }
 
 

@@ -38,8 +38,8 @@ public class CvDetailManager implements CvDetailService {
     }
 
     @Override
-    public DataResult<List<CvDetails>> getByCandidatesId(int id) {
-        return new SuccessDataResult<List<CvDetails>>(cvDetailDao.getByCandidatesId(id));
+    public DataResult<List<CvDetails>> getByCandidatesId(int candidatesId) {
+        return new SuccessDataResult<List<CvDetails>>(cvDetailDao.getByCandidatesId(candidatesId));
     }
 
 
