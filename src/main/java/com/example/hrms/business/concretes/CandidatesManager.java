@@ -43,7 +43,7 @@ public class CandidatesManager implements CandidateService {
     }
 
     @Override
-    public Result getByCandidateSave(Candidates candidates) {
+    public Result addByCandidateSave(Candidates candidates) {
         if( candidates.getName().isEmpty() || candidates.getLastName().isEmpty() || candidates.getNationaltyNo().isEmpty()
                 || String.valueOf(candidates.getBirthDate()).isEmpty() || candidates.getEmail().isEmpty()
                 || candidates.getPassword().isEmpty()){

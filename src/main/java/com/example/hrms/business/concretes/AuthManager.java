@@ -3,9 +3,7 @@ package com.example.hrms.business.concretes;
 import com.example.hrms.business.abstracts.AuthService;
 import com.example.hrms.business.abstracts.CandidateService;
 import com.example.hrms.business.abstracts.CompanyService;
-import com.example.hrms.core.results.DataResult;
 import com.example.hrms.core.results.Result;
-import com.example.hrms.core.results.SuccessDataResult;
 import com.example.hrms.entities.concretes.Candidates;
 import com.example.hrms.entities.concretes.Company;
 import com.example.hrms.entities.concretes.dtos.authDtos.CandidateForRegisterDto;
@@ -30,19 +28,17 @@ public class AuthManager implements AuthService {
     }
 
     @Override
-    public Result getByCandidateForRegister(CandidateForRegisterDto candidateForRegisterDto) {
+    public Result addByCandidateForRegister(CandidateForRegisterDto candidateForRegisterDto) {
         Candidates candidates = modelMapper.map(candidateForRegisterDto,Candidates.class);
 
         return this.candidateService.addByCandidateSave(candidates);
     }
 
     @Override
-    public DataResult<Company> getByCompanyForRegister(CompanyForRegisterDto companyForRegisterDto) {
+    public Result addByCompanyForRegister(CompanyForRegisterDto companyForRegisterDto) {
         Company company = modelMapper.map(companyForRegisterDto,Company.class);
 
-        companyService.getByCompanySave(company);
-
-        return new SuccessDataResult<Company>(company,"Kayıt edildi");
+        return this.companyService.getByCompanySave(company);
     }
 
     @Override

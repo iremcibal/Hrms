@@ -4,9 +4,7 @@ package com.example.hrms.api;
 import com.example.hrms.business.abstracts.AuthService;
 import com.example.hrms.business.abstracts.CandidateService;
 import com.example.hrms.business.abstracts.CompanyService;
-import com.example.hrms.core.results.DataResult;
 import com.example.hrms.core.results.Result;
-import com.example.hrms.entities.concretes.Company;
 import com.example.hrms.entities.concretes.dtos.authDtos.CandidateForRegisterDto;
 import com.example.hrms.entities.concretes.dtos.authDtos.CompanyForRegisterDto;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,13 +30,13 @@ public class AuthController {
 
     @PostMapping("/candidateForRegisterDto")
     public Result getByCandidateForRegister(@Valid @RequestBody CandidateForRegisterDto candidateForRegisterDto) {
-        return authService.getByCandidateForRegister(candidateForRegisterDto);
+        return authService.addByCandidateForRegister(candidateForRegisterDto);
 
     }
 
     @PostMapping("/companyForRegisterDto")
-    public DataResult<Company> getByCompanyForRegister(@RequestBody CompanyForRegisterDto companyForRegisterDto) {
-        return authService.getByCompanyForRegister(companyForRegisterDto);
+    public Result getByCompanyForRegister(@RequestBody CompanyForRegisterDto companyForRegisterDto) {
+        return authService.addByCompanyForRegister(companyForRegisterDto);
     }
 
 
