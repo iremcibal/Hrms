@@ -4,6 +4,11 @@ import com.example.hrms.business.abstracts.AuthService;
 import com.example.hrms.business.abstracts.CandidateService;
 import com.example.hrms.business.abstracts.CompanyService;
 import com.example.hrms.core.results.Result;
+
+import com.example.hrms.core.results.DataResult;
+import com.example.hrms.core.results.Result;
+import com.example.hrms.core.results.SuccessDataResult;
+
 import com.example.hrms.entities.concretes.Candidates;
 import com.example.hrms.entities.concretes.Company;
 import com.example.hrms.entities.concretes.dtos.authDtos.CandidateForRegisterDto;
@@ -29,6 +34,7 @@ public class AuthManager implements AuthService {
 
     @Override
     public Result addByCandidateForRegister(CandidateForRegisterDto candidateForRegisterDto) {
+
         Candidates candidates = modelMapper.map(candidateForRegisterDto,Candidates.class);
 
         return this.candidateService.addByCandidateSave(candidates);
@@ -39,6 +45,7 @@ public class AuthManager implements AuthService {
         Company company = modelMapper.map(companyForRegisterDto,Company.class);
 
         return this.companyService.getByCompanySave(company);
+
     }
 
     @Override
