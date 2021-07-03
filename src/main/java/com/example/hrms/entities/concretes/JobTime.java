@@ -18,7 +18,7 @@ public class JobTime {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "jobtime_id",nullable = false)
-    private int jobtime_id;
+    private int jobtimeId;
 
     @Column(name = "time_name",nullable = false)
     private String timeName;
