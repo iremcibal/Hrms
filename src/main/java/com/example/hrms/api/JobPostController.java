@@ -32,6 +32,16 @@ public class JobPostController {
         return jobPostService.getJobPostByActiveTrue();
     }
 
+    //Onaylanmış iş ilanları listesi
+    @GetMapping("/getByStatusTrue")
+    public DataResult<List<JobPost>> getJobPostByStatusTrue(){
+        return jobPostService.getJobPostByStatusTrue();
+    }
+    //Onaylanmamış iş ilanları listesi
+    @GetMapping("/getByStatusFalse")
+    public DataResult<List<JobPost>> getJobPostByStatusFalse() {
+        return jobPostService.getJobPostByStatusFalse();
+    }
 
     //Aktif olan iş ilanlarını sıralama
     @GetMapping("/getByJobPostList")
@@ -56,12 +66,20 @@ public class JobPostController {
     }
 
     //Aktifliğini değiştirmek
-    @GetMapping("/updateStatusJobPost")
-    public DataResult<JobPost> updateStatusJobPost(int id, Boolean status){
-        return jobPostService.updateStatusJobPost(id,status);
+    @GetMapping("/updateActiveJobPost")
+    public DataResult<JobPost> updateActiveJobPost(int id, Boolean active){
+        return jobPostService.updateActiveJobPost(id,active);
     }
 
+    @GetMapping("/updateStatusJobPost")
+    public DataResult<JobPost> updateStatusJobPost(int id) {
+        return jobPostService.updateStatusJobPost(id);
+    }
 
+    @DeleteMapping("/jobPostDelete{jobPostId}")
+    public Result getByJobPostDelete(@PathVariable int jobPostId) {
+        return jobPostService.getByJobPostDelete(jobPostId);
+    }
 
 
 

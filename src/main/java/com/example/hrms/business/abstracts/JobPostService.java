@@ -9,13 +9,19 @@ import java.util.List;
 public interface JobPostService {
     Result getByJobPostSave(JobPost jobPost);
     DataResult<List<JobPost>> getJobPostByActiveTrue();
+
+    DataResult<List<JobPost>> getJobPostByStatusTrue();
+    DataResult<List<JobPost>> getJobPostByStatusFalse();
+
     DataResult<List<JobPost>> getByJobPostList(Boolean isActive);
     DataResult<List<JobPost>> getByJobPostSort();
     DataResult<List<JobPost>> getByCompanyNameList(String companyName);
     DataResult<List<JobPost>> getByCompany_Id(int companyId);
 
 
-    DataResult<JobPost> updateStatusJobPost(int id,Boolean status);
+    DataResult<JobPost> updateActiveJobPost(int id,Boolean status);
+    DataResult<JobPost> updateStatusJobPost(int id);
 
+    Result getByJobPostDelete(int jobPostId);
 
 }

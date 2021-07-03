@@ -11,7 +11,13 @@ public interface JobPostDao extends JpaRepository<JobPost,Integer> {
 
     List<JobPost> getByCompany_CompanyName(String companyName);
     List<JobPost> getByIsActive(Boolean status);
+
+    //Sistem personali için
+    List<JobPost> getByStatusTrue();
+    List<JobPost> getByStatusFalse();
+
     JobPost getByJobPostId(int jobPostId);
+
     List<JobPost> getByCompany_Id(int companyId);
 
     List<JobPost> findByUpdatedAtAndIsActiveTrue(LocalDate localDate);

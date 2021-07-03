@@ -2,7 +2,6 @@ package com.example.hrms.entities.concretes;
 
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -19,7 +18,7 @@ public class City {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "city_id",nullable = false)
-    private int city_id;
+    private int cityId;
 
     @Column(name = "city_name",nullable = false)
     private String cityName;

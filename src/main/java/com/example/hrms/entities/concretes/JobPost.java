@@ -50,6 +50,9 @@ public class JobPost {
     @Column(name = "is_active",nullable = false)
     private boolean isActive;
 
+    @Column(name="status",columnDefinition="boolean default false",nullable = false)
+    private boolean status;
+
     @ManyToOne()
     @JoinColumn(name = "city_id")
     private City city;

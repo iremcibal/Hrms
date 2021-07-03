@@ -30,6 +30,16 @@ public class JobPostManager implements JobPostService {
     }
 
     @Override
+    public DataResult<List<JobPost>> getJobPostByStatusTrue() {
+        return new SuccessDataResult<List<JobPost>>(jobPostDao.getByStatusTrue(),"Onaylanmış iş ilanları listesi");
+    }
+
+    @Override
+    public DataResult<List<JobPost>> getJobPostByStatusFalse() {
+        return new SuccessDataResult<List<JobPost>>(jobPostDao.getByStatusFalse(),"Onaylanmamış iş ilanları");
+    }
+
+    @Override
     public DataResult<List<JobPost>> getByJobPostList(Boolean isActive) {
         return new DataResult<List<JobPost>>(jobPostDao.getByIsActive(isActive),true,"Aktif iş ilanları");
     }
@@ -52,7 +62,7 @@ public class JobPostManager implements JobPostService {
     }
 
     @Override
-    public DataResult<JobPost> updateStatusJobPost(int id, Boolean status) {
+    public DataResult<JobPost> updateActiveJobPost(int id, Boolean status) {
         JobPost jobPost = this.jobPostDao.getByJobPostId(id);
         jobPost.setActive(status);
         jobPostDao.save(jobPost);
@@ -60,6 +70,20 @@ public class JobPostManager implements JobPostService {
 
     }
 
+    @Override
+    public DataResult<JobPost> updateStatusJobPost(int id) {
+        JobPost jobPost = this.jobPostDao.getByJobPostId(id);
+        jobPost.setStatus(true);
+        jobPostDao.save(jobPost);
+        return new SuccessDataResult<JobPost>(jobPost,"Onay değişikliği");
+    }
+
+    @Override
+    public Result getByJobPostDelete(int jobPostId) {
+        JobPost jobPost = jobPostDao.getByJobPostId(jobPostId);
+        jobPostDao.delete(jobPost);
+        return new SuccessResult("Silindi");
+    }
 
 
 }
