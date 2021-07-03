@@ -62,6 +62,7 @@ public class JobPostManager implements JobPostService {
     }
 
     @Override
+
     public DataResult<JobPost> updateActiveJobPost(int id, Boolean status) {
         JobPost jobPost = this.jobPostDao.getByJobPostId(id);
         jobPost.setActive(status);
@@ -84,6 +85,7 @@ public class JobPostManager implements JobPostService {
         jobPostDao.delete(jobPost);
         return new SuccessResult("Silindi");
     }
+
 
 
 }
