@@ -76,7 +76,7 @@ public class JobPost {
     private JobTime jobTime;
 
     @JsonIgnore
-    @OneToMany(mappedBy = "candidates")
+    @OneToMany(mappedBy = "jobPost")
     private List<Favorite> favorites;
 
 
