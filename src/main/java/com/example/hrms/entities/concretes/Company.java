@@ -15,6 +15,7 @@ import java.util.List;
 @Data
 @Table(name = "company")
 @PrimaryKeyJoinColumn(name = "user_id", referencedColumnName = "id")
+@JsonIgnoreProperties({"hibernateLazyInitializer","handler","jobPost"})
 @AllArgsConstructor
 @NoArgsConstructor
 public class Company extends Users {

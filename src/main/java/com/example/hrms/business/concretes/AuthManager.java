@@ -29,7 +29,6 @@ public class AuthManager implements AuthService {
 
     @Override
     public Result addByCandidateForRegister(CandidateForRegisterDto candidateForRegisterDto) {
-
         Candidates candidates = modelMapper.map(candidateForRegisterDto,Candidates.class);
 
         return this.candidateService.addByCandidateSave(candidates);

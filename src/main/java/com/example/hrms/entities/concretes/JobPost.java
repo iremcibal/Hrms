@@ -1,6 +1,7 @@
 package com.example.hrms.entities.concretes;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -9,6 +10,7 @@ import org.hibernate.annotations.UpdateTimestamp;
 
 import javax.persistence.*;
 import java.util.Date;
+import java.util.List;
 
 
 @Entity
@@ -61,7 +63,6 @@ public class JobPost {
     @JoinColumn(name = "position_id")
     private Positions positions;
 
-
     @ManyToOne()
     @JoinColumn(name = "company_id")
     private Company company ;
@@ -73,6 +74,10 @@ public class JobPost {
     @ManyToOne()
     @JoinColumn(name="jobtime_id")
     private JobTime jobTime;
+
+    @JsonIgnore
+    @OneToMany(mappedBy = "candidates")
+    private List<Favorite> favorites;
 
 
 

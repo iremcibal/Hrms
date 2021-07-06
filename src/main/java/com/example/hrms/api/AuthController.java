@@ -31,7 +31,6 @@ public class AuthController {
 
     @PostMapping("/candidateForRegisterDto")
     public Result getByCandidateForRegister(@Valid @RequestBody CandidateForRegisterDto candidateForRegisterDto) {
-
         return authService.addByCandidateForRegister(candidateForRegisterDto);
 
     }

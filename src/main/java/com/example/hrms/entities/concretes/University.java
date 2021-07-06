@@ -7,7 +7,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-import java.time.LocalDate;
+import java.util.Date;
 
 @Entity
 @Data
@@ -29,10 +29,10 @@ public class University {
     private String education;
 
     @Column(name="start_at",nullable = false)
-    private LocalDate startAt;
+    private Date startAt;
 
     @Column(name = "finish_at",nullable = true)
-    private LocalDate finishAt;
+    private Date finishAt;
 
     @JsonIgnore
     @ManyToOne()
