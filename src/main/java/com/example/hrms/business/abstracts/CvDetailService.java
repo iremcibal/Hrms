@@ -13,4 +13,6 @@ public interface CvDetailService {
     Result getByCurriculumVitaeDelete(int cv_id);
 
     DataResult<List<CvDetails>> getByCandidatesId(int candidatesId);
+    DataResult<List<CvDetails>> getByCandidatesIdAndStatusTrue(int id);
+    DataResult<List<CvDetails>> getByCandidatesIdAndStatusFalse(int id);
 }

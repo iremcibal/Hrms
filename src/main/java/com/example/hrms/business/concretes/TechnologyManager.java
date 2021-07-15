@@ -45,4 +45,14 @@ public class TechnologyManager implements TechnologyService {
         return new SuccessDataResult<List<Technology>>(technologyDao.getByCandidatesId(id));
     }
 
+    @Override
+    public DataResult<List<Technology>> getByCandidatesIdAndStatusTrue(int id) {
+        return new SuccessDataResult<List<Technology>>(technologyDao.getByCandidatesIdAndStatusTrue(id));
+    }
+
+    @Override
+    public DataResult<List<Technology>> getByCandidatesIdAndStatusFalse(int id) {
+        return new SuccessDataResult<List<Technology>>(technologyDao.getByCandidatesIdAndStatusFalse(id));
+    }
+
 }

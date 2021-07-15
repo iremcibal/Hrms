@@ -2,7 +2,6 @@ package com.example.hrms.business.abstracts;
 
 import com.example.hrms.core.results.DataResult;
 import com.example.hrms.core.results.Result;
-import com.example.hrms.entities.concretes.Candidates;
 import com.example.hrms.entities.concretes.University;
 
 import java.util.List;
@@ -17,4 +16,6 @@ public interface UniversityService {
 
     DataResult<List<University>> getByCandidatesId(int id);
 
+    DataResult<List<University>> getByCandidatesIdAndStatusTrue(int id);
+    DataResult<List<University>> getByCandidatesIdAndStatusFalse(int id);
 }

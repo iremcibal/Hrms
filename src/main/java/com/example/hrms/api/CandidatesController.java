@@ -32,6 +32,14 @@ public class CandidatesController {
     public DataResult<CurriculumVitaeDto> getCurriculumVitaeById(@RequestParam int id) {
         return candidateService.getCurriculumVitaeById(id);
     }
+    @GetMapping("/statusTrueList")
+    public DataResult<CurriculumVitaeDto> getCurriculumVitaeByIdAndStatusTrue(int id) {
+        return candidateService.getCurriculumVitaeByIdAndStatusTrue(id);
+    }
+    @GetMapping("/statusFalseList")
+    public DataResult<CurriculumVitaeDto> getCurriculumVitaeByIdAndStatusFalse(int id) {
+        return candidateService.getCurriculumVitaeByIdAndStatusFalse(id);
+    }
 
     @PostMapping("/addCandidate")
     public Result addByCandidateSave(@RequestBody Candidates candidates){

@@ -1,7 +1,6 @@
 package com.example.hrms.dataAccess.abstracts;
 
 import com.example.hrms.entities.concretes.Image;
-import com.example.hrms.entities.concretes.University;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
@@ -14,5 +13,8 @@ public interface ImageDao extends JpaRepository<Image,Integer> {
 
     List<Image> getByCandidatesId(int candidates_id);
 
+    //Sistem personali için
+    List<Image> getByCandidatesIdAndStatusTrue(int id);
+    List<Image> getByCandidatesIdAndStatusFalse(int id);
 
 }

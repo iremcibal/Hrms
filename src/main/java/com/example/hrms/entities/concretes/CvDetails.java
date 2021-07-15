@@ -26,6 +26,9 @@ public class CvDetails {
     @Column(name = "front_note")
     private String frontNote;
 
+    @Column(name="status",columnDefinition="boolean default false",nullable = false)
+    private boolean status;
+
     @ManyToOne()
     @JoinColumn(name = "candidates_id")
     private Candidates candidates;

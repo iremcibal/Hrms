@@ -11,6 +11,8 @@ public interface CandidateService {
     DataResult<List<Candidates>> getByCandidateList();
     Result addByCandidateSave(Candidates candidates);
     DataResult<CurriculumVitaeDto> getCurriculumVitaeById(int id);
+    DataResult<CurriculumVitaeDto> getCurriculumVitaeByIdAndStatusTrue(int id);
+    DataResult<CurriculumVitaeDto> getCurriculumVitaeByIdAndStatusFalse(int id);
 
     Result getByCandidateDelete(String nationaltyNo);
 

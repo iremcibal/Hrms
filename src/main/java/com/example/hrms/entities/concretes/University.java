@@ -34,6 +34,9 @@ public class University {
     @Column(name = "finish_at",nullable = true)
     private Date finishAt;
 
+    @Column(name="status",columnDefinition="boolean default false",nullable = false)
+    private boolean status;
+
     @ManyToOne()
     @JoinColumn(name = "candidates_id")
     private Candidates candidates;

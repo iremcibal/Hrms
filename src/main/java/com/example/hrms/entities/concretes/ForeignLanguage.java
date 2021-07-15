@@ -23,6 +23,9 @@ public class ForeignLanguage {
 
     private String level;
 
+    @Column(name="status",columnDefinition="boolean default false",nullable = false)
+    private boolean status;
+
     @ManyToOne()
     @JoinColumn(name = "candidates_id")
     private Candidates candidates;

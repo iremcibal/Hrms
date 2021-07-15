@@ -12,4 +12,8 @@ public interface LanguageDao extends JpaRepository<ForeignLanguage, Integer> {
     ForeignLanguage getByLanguageId(int languageId);
 
     List<ForeignLanguage> getByCandidatesId(int id);
+
+    //Sistem personali için
+    List<ForeignLanguage> getByCandidatesIdAndStatusTrue(int id);
+    List<ForeignLanguage> getByCandidatesIdAndStatusFalse(int id);
 }

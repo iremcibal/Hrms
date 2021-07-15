@@ -13,4 +13,7 @@ public interface TechnologyDao extends JpaRepository<Technology,Integer> {
 
     List<Technology> getByCandidatesId(int id);
 
+    //Sistem personali için
+    List<Technology> getByCandidatesIdAndStatusTrue(int id);
+    List<Technology> getByCandidatesIdAndStatusFalse(int id);
 }
