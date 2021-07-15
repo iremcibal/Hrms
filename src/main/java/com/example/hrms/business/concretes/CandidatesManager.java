@@ -79,6 +79,37 @@ public class CandidatesManager implements CandidateService {
         return new SuccessDataResult<CurriculumVitaeDto>(curriculumVitaeDto,"Data listelendi.");
 
     }
+    //Status trueları listeleme
+    @Override
+    public DataResult<CurriculumVitaeDto> getCurriculumVitaeByIdAndStatusTrue(int id) {
+        CurriculumVitaeDto curriculumVitaeDto = new CurriculumVitaeDto();
+
+        curriculumVitaeDto.setCandidates(this.candidateDao.getByCandidatesIdAndStatusTrue(id));
+        curriculumVitaeDto.setImage(this.imageService.getByCandidatesIdAndStatusTrue(id).getData());
+        curriculumVitaeDto.setUniversities(this.universityService.getByCandidatesIdAndStatusTrue(id).getData());
+        curriculumVitaeDto.setJobExperiences(this.jobExperienceService.getByCandidatesIdAndStatusTrue(id).getData());
+        curriculumVitaeDto.setTechnologies(this.technologyService.getByCandidatesIdAndStatusTrue(id).getData());
+        curriculumVitaeDto.setForeignLanguages(this.languageService.getByCandidatesIdAndStatusTrue(id).getData());
+        curriculumVitaeDto.setCvDetails(this.cvDetailService.getByCandidatesIdAndStatusTrue(id).getData());
+
+        return new SuccessDataResult<CurriculumVitaeDto>(curriculumVitaeDto,"Data listelendi.");
+    }
+
+    //Status false listeleme
+    @Override
+    public DataResult<CurriculumVitaeDto> getCurriculumVitaeByIdAndStatusFalse(int id) {
+        CurriculumVitaeDto curriculumVitaeDto = new CurriculumVitaeDto();
+
+        curriculumVitaeDto.setCandidates(this.candidateDao.getByCandidatesIdAndStatusFalse(id));
+        curriculumVitaeDto.setImage(this.imageService.getByCandidatesIdAndStatusFalse(id).getData());
+        curriculumVitaeDto.setUniversities(this.universityService.getByCandidatesIdAndStatusFalse(id).getData());
+        curriculumVitaeDto.setJobExperiences(this.jobExperienceService.getByCandidatesIdAndStatusFalse(id).getData());
+        curriculumVitaeDto.setTechnologies(this.technologyService.getByCandidatesIdAndStatusFalse(id).getData());
+        curriculumVitaeDto.setForeignLanguages(this.languageService.getByCandidatesIdAndStatusFalse(id).getData());
+        curriculumVitaeDto.setCvDetails(this.cvDetailService.getByCandidatesIdAndStatusFalse(id).getData());
+
+        return new SuccessDataResult<CurriculumVitaeDto>(curriculumVitaeDto,"Data listelendi.");
+    }
 
 
     @Override

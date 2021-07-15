@@ -42,5 +42,16 @@ public class CvDetailManager implements CvDetailService {
         return new SuccessDataResult<List<CvDetails>>(cvDetailDao.getByCandidatesId(candidatesId));
     }
 
+    //Status'u true olanları listeleme
+    @Override
+    public DataResult<List<CvDetails>> getByCandidatesIdAndStatusTrue(int id) {
+        return new SuccessDataResult<List<CvDetails>>(cvDetailDao.getByCandidatesIdAndStatusTrue(id));
+    }
+    //Status'u false olanları listeleme
+    @Override
+    public DataResult<List<CvDetails>> getByCandidatesIdAndStatusFalse(int id) {
+        return new SuccessDataResult<List<CvDetails>>(cvDetailDao.getByCandidatesIdAndStatusFalse(id));
+    }
+
 
 }

@@ -1,7 +1,6 @@
 package com.example.hrms.entities.concretes;
 
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -28,7 +27,9 @@ public class Image {
     @Column(name = "public_id")
     private String publicId;
 
-    @JsonIgnore
+    @Column(name="status",columnDefinition="boolean default false",nullable = false)
+    private boolean status;
+
     @OneToOne()
     @JoinColumn(name = "candidates_id")
     private Candidates candidates;

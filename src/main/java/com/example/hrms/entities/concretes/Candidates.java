@@ -33,6 +33,9 @@ public class Candidates extends Users{
     @Column(name = "is_active")
     private boolean isActive;
 
+    @Column(name="status",columnDefinition="boolean default false",nullable = false)
+    private boolean status;
+
     @JsonIgnore
     @OneToOne(mappedBy = "candidates")
     private Image image;

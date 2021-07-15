@@ -7,4 +7,8 @@ import java.util.List;
 
 public interface CvDetailDao extends JpaRepository<CvDetails,Integer> {
     List<CvDetails> getByCandidatesId(int id);
+
+    //Sistem personali için
+    List<CvDetails> getByCandidatesIdAndStatusTrue(int id);
+    List<CvDetails> getByCandidatesIdAndStatusFalse(int id);
 }

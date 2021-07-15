@@ -11,7 +11,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
-import java.util.Date;
 import java.util.List;
 
 @Service
@@ -47,6 +46,16 @@ public class UniversityManager implements UniversityService {
     @Override
     public DataResult<List<University>> getByCandidatesId(int id) {
         return new SuccessDataResult<List<University>>(this.universityDao.getByCandidatesId(id));
+    }
+
+    @Override
+    public DataResult<List<University>> getByCandidatesIdAndStatusTrue(int id) {
+        return new SuccessDataResult<List<University>>(this.universityDao.getByCandidatesIdAndStatusTrue(id));
+    }
+
+    @Override
+    public DataResult<List<University>> getByCandidatesIdAndStatusFalse(int id) {
+        return new SuccessDataResult<List<University>>(this.universityDao.getByCandidatesIdAndStatusFalse(id));
     }
 
 }

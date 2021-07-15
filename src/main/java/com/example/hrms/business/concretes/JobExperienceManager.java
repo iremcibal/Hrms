@@ -7,7 +7,6 @@ import com.example.hrms.core.results.SuccessDataResult;
 import com.example.hrms.core.results.SuccessResult;
 import com.example.hrms.dataAccess.abstracts.JobExperienceDao;
 import com.example.hrms.entities.concretes.JobExperiences;
-import com.example.hrms.entities.concretes.University;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
@@ -49,7 +48,15 @@ public class JobExperienceManager implements JobExperienceService {
         return new SuccessDataResult<List<JobExperiences>>(jobExperienceDao.getByCandidatesId(id));
     }
 
+    @Override
+    public DataResult<List<JobExperiences>> getByCandidatesIdAndStatusTrue(int id) {
+        return new SuccessDataResult<List<JobExperiences>>(jobExperienceDao.getByCandidatesIdAndStatusTrue(id));
+    }
 
+    @Override
+    public DataResult<List<JobExperiences>> getByCandidatesIdAndStatusFalse(int id) {
+        return new SuccessDataResult<List<JobExperiences>>(jobExperienceDao.getByCandidatesIdAndStatusFalse(id));
+    }
 
 
 }

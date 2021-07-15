@@ -12,6 +12,10 @@ public interface CandidateDao extends JpaRepository<Candidates,Integer> {
     Candidates findByNationaltyNo(String nationaltyNo);
     Candidates findById(int id);
 
+    //Sistem personali için
+    Candidates getByCandidatesIdAndStatusTrue(int id);
+    Candidates getByCandidatesIdAndStatusFalse(int id);
+
 
 
 }
