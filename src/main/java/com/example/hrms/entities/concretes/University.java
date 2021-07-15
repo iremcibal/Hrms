@@ -1,7 +1,6 @@
 package com.example.hrms.entities.concretes;
 
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -26,6 +25,7 @@ public class University {
     @Column(name ="division_name",nullable = false)
     private String division_name;
 
+    @Column(name = "education",nullable = false)
     private String education;
 
     @Column(name="start_at",nullable = false)
@@ -34,7 +34,6 @@ public class University {
     @Column(name = "finish_at",nullable = true)
     private Date finishAt;
 
-    @JsonIgnore
     @ManyToOne()
     @JoinColumn(name = "candidates_id")
     private Candidates candidates;

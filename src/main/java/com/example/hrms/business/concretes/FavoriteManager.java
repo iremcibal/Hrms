@@ -26,13 +26,13 @@ public class FavoriteManager implements FavoriteService {
     }
 
     @Override
-    public Result getByFavoriteSave(Favorite favorite) {
+    public Result addByFavorite(Favorite favorite) {
         favoriteDao.save(favorite);
         return new SuccessResult("Data kayıt edildi.");
     }
 
     @Override
-    public Result getByFavoriteDelete(int favoriteId) {
+    public Result deleteByFavorite(int favoriteId) {
         Favorite favorite=favoriteDao.getByFavoriteId(favoriteId);
         favoriteDao.delete(favorite);
         return new SuccessResult("Data silindi");
