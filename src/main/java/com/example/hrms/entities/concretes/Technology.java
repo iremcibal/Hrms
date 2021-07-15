@@ -23,6 +23,7 @@ public class Technology {
 
     private String level;
 
+
     @Column(name="status",columnDefinition="boolean default false",nullable = false)
     private boolean status;
 
