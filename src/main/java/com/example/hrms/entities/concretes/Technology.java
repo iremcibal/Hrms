@@ -1,7 +1,6 @@
 package com.example.hrms.entities.concretes;
 
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -24,7 +23,6 @@ public class Technology {
 
     private String level;
 
-    @JsonIgnore
     @ManyToOne()
     @JoinColumn(name = "candidates_id")
     private Candidates candidates;

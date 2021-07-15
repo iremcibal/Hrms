@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+
+@CrossOrigin
 @RestController
 @Controller
 @RequestMapping("/favorite")
@@ -22,14 +24,15 @@ public class FavoriteController {
         return favoriteService.getByFavoriteList();
     }
 
-    @PostMapping("/getByFavoriteSave")
-    public Result getByFavoriteSave(@RequestBody Favorite favorite) {
-        return favoriteService.getByFavoriteSave(favorite);
+
+    @PostMapping("/addFavorite")
+    public Result addByFavorite(@RequestBody Favorite favorite) {
+        return favoriteService.addByFavorite(favorite);
     }
 
-    @DeleteMapping("/getByFavoriteDelete{favoriteId}")
-    public Result getByFavoriteDelete(@RequestParam int favoriteId) {
-        return favoriteService.getByFavoriteDelete(favoriteId);
+    @DeleteMapping("/deleteFavorite{favoriteId}")
+    public Result deleteFavorite(@RequestParam int favoriteId) {
+        return favoriteService.deleteByFavorite(favoriteId);
     }
 
     @GetMapping("/getByCandidateIdFavList")

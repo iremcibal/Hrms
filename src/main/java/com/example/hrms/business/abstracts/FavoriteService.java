@@ -8,9 +8,8 @@ import java.util.List;
 
 public interface FavoriteService {
     DataResult<List<Favorite>> getByFavoriteList();
-    Result getByFavoriteSave(Favorite favorite);
-    Result getByFavoriteDelete(int favoriteId);
-
+    Result addByFavorite(Favorite favorite);
+    Result deleteByFavorite(int favoriteId);
     DataResult<List<Favorite>> getByCandidates_Id(int id);
 
 

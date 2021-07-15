@@ -1,12 +1,10 @@
 package com.example.hrms.entities.concretes;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-import java.util.List;
 
 @Entity
 @Data
@@ -28,7 +26,6 @@ public class CvDetails {
     @Column(name = "front_note")
     private String frontNote;
 
-    @JsonIgnore
     @ManyToOne()
     @JoinColumn(name = "candidates_id")
     private Candidates candidates;
